@@ -1,4 +1,10 @@
-FROM node:8.11.1-alpine
+FROM node:8.17-alpine
+
+RUN apk update && apk upgrade && \
+	apk add --no-cache \
+	python \
+	make \
+	g++
 
 # Create app directory
 RUN mkdir /code
